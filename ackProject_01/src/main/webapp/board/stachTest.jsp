@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<label>stachTest.v1</label>
-	<label>stachTest.v2</label>
+	<label>stashTest.v1</label>
+	<label>stashTest.v2</label>
 </body>
 </html>
