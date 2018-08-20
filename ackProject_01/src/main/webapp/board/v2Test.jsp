@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<label>v2Test</label>
+	<label>v2Test!</label>
 </body>
 </html>

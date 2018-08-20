@@ -8,5 +8,6 @@
 </head>
 <body>
 	<label>stachTest.v1</label>
+	<label>stachTest.v2</label>
 </body>
 </html>
