@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardSQL">
+	<select id="getTotalA" resultType="int">
+		select count(*) from ackboard
+	</select>
+	<select id="boardList" parameterType="java.util.Map" resultType="board">
+		select seq,
+			   name,
+			   subject,
+			   content,
+			   to_char(now(), 'yyyy-mm-dd') logtime
+			   from ackboard
+			   order by seq desc limit #{endNum} offset #{startNum}
+	</select>
+	<insert id="boardWrite" parameterType="java.util.Map">
+		insert into ackboard values(nextval('ackboard_seq'), #{name},#{subject},#{content},now())
+	</insert>
+	
+	<select id="boardView" parameterType="java.util.Map" resultType="board">
+		select seq, name, subject, content, to_char(now(), 'yyyy-mm-dd')as logtime from ackboard where seq=#{iseq}
+	</select>
+	
+	<update id="boardUpdate" parameterType="java.util.Map">
+		update ackboard set subject=#{subject}, content=#{content} where seq=#{iseq}
+	</update>
+	
+	<delete id="boardDelete" parameterType="java.util.Map">
+		delete from ackboard where seq=#{iseq}
+	</delete>
+</mapper>
