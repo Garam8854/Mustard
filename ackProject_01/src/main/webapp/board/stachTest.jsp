@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<label>stachTest.v1</label>
 </body>
 </html>
